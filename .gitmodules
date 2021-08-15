@@ -1,0 +1,3 @@
+[submodule "code_dir/SP-Common"]
+	path = code_dir/SP-Common
+	url = https://github.com/Medarcus/SP-Common.git
