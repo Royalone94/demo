@@ -1,0 +1,14 @@
+db_configs:
+  db_type: 'oracle'
+
+field_configs:
+  name_fields : 'pat_norm_fname,pat_norn_mname,pat_norm_lname,pat_norm_other_name,pat_norm_maiden_name,pat_norm_nickname'
+
+algo_configs:
+  score_threshold: 0.2
+  score_order: ['pat_norm_fname', 'pat_norm_lname']
+  
+
+other_configs:
+  log_format: '%(asctime)s - [%(processName)s] - [%(threadName)s] - %(name)s:%(lineno)d - %(levelname)s - %(message)s'
+  log_level: DEBUG

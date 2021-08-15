@@ -1,0 +1,14 @@
+# configure conda
+FROM continuumio/miniconda3
+
+# install python requirements
+ADD requirements.txt /
+
+RUN python3 -m pip install -r requirements.txt
+
+ADD start_scripts /opt/sure-patient/bin/
+ADD demo.conf.yaml /opt/sure-patient/demo.conf.yaml
+ADD demo /opt/sure-patient/demo/
+ADD demo/SP-Common/common /opt/sure-patient/demo/common/
+RUN mkdir -p /opt/sure-patient/logs
+ENTRYPOINT ["bash","/opt/sure-patient/bin/start_demo.sh"]
